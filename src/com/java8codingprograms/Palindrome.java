@@ -18,7 +18,19 @@ public class Palindrome {
 		} else {
 			System.out.println("Not palindrome");
 		}
-
+		
+		
+		//Another approach
+		String s5="";
+		for(int i = s1.length()-1; i>=0; i--) {
+			s5 = s5+s1.charAt(i);
+		}
+		if(s1.equals(s5)) {
+			System.out.println("The given string is palindrome");
+		}
+		else {
+			System.out.println("The given string is not palindrome");
+		}	
 	}
 
 }
