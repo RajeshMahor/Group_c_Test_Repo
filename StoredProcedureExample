@@ -1,0 +1,19 @@
+
+create table accountDetails(accountNumber int  primary key auto_increment, account_Name varchar(250), currentBalance decimal(20,2));
+
+insert into accountDetails values(10001, 'Tony Stark', 10000);
+select * from accountDetails;
+
+delimiter //
+create procedure Balance(withdrawalAmount int)
+begin
+if withdrawalAmount>=1 then
+update accountDetails set currentBalance=currentBalance-withdrawalAmount where accountNumber=10001;
+select * from accountDetails;
+else
+select * from accountDetails;
+end if;
+end;
+// delimiter ;
+
+call Balance(1000);
